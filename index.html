@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEWOONG Online Sculpture Gallery</title>
+  <meta name="description" content="세웅 온라인 조각 전시장. 작품을 여러 각도에서 감상할 수 있는 가상 갤러리입니다." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>SEWOONG</strong>
+      <span>ONLINE SCULPTURE GALLERY</span>
+    </div>
+    <nav>
+      <a class="active" href="#gallery">전시장</a>
+      <a href="#artworks">작품보기</a>
+      <a href="#artist">작가소개</a>
+      <a href="#profile">프로필</a>
+    </nav>
+    <div class="top-icons">
+      <button id="fullscreenBtn" title="전체화면">⛶</button>
+      <button id="soundBtn" title="사운드">🔈</button>
+    </div>
+  </header>
+
+  <main id="gallery" class="museum">
+    <aside class="left-panel">
+      <div class="panel-title">작품 리스트</div>
+      <button class="up">⌃</button>
+      <div class="thumb-list">
+        <button class="thumb active"><img src="artwork-main.jpg" alt="작품 썸네일"></button>
+        <button class="thumb"><img src="artwork-main.jpg" alt="작품 썸네일"></button>
+        <button class="thumb"><img src="artwork-main.jpg" alt="작품 썸네일"></button>
+        <button class="thumb"><img src="artwork-main.jpg" alt="작품 썸네일"></button>
+        <button class="thumb"><img src="artwork-main.jpg" alt="작품 썸네일"></button>
+      </div>
+      <button class="down">⌄</button>
+
+      <div class="map-box">
+        <h3>전시장 안내 MAP</h3>
+        <div class="map">
+          <span class="room r1"></span><span class="room r2"></span><span class="room r3"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="map-actions">
+          <button>📍 작품 위치</button>
+          <button>⛶ 전체 보기</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="stage">
+      <div class="gallery-bg">
+        <div class="ceiling-lights"></div>
+        <div class="back-sculptures left"></div>
+        <div class="back-sculptures right"></div>
+        <div class="floor-grid"></div>
+      </div>
+
+      <div class="main-art-wrap" id="artWrap">
+        <img id="mainArt" src="artwork-main.jpg" alt="Energy Apple" />
+      </div>
+
+      <div class="pedestal">
+        <div class="nameplate">
+          <strong>ENERGY APPLE</strong>
+          <span>2026, Bronze</span>
+          <small>72 × 72 × 75 cm</small>
+        </div>
+      </div>
+
+      <div class="slide-control">
+        <button id="prevView">←</button>
+        <span id="viewCount">1 / 6</span>
+        <button id="nextView">→</button>
+      </div>
+    </section>
+
+    <aside class="info-card">
+      <p>TODAY'S WORK</p>
+      <h1>Energy Apple</h1>
+      <h2>2026, Bronze<br>72 × 72 × 75 cm</h2>
+      <hr>
+      <p class="desc">생명력과 에너지의 흐름을 사과의 표면과 입체적 돌기 형상으로 표현한 조각 작품입니다. 자연의 순환과 내면의 힘을 상징합니다.</p>
+      <button class="more">▣ 작품 정보 더보기</button>
+    </aside>
+
+    <div class="view-menu">
+      <button data-view="좌측면">▱<span>좌측면</span></button>
+      <button class="selected" data-view="정면">▱<span>정면</span></button>
+      <button data-view="우측면">▱<span>우측면</span></button>
+      <button data-view="후면">▱<span>후면</span></button>
+      <button data-view="상단">▱<span>상단</span></button>
+      <button data-view="확대">⌕<span>확대</span></button>
+    </div>
+
+    <div class="rotate-box">
+      <div class="rotate-head">
+        <strong>작품 회전</strong>
+        <button id="rotateToggle">ON</button>
+      </div>
+      <input id="rotateRange" type="range" min="0" max="360" value="0">
+      <p>☝ 마우스로 드래그하여 자유롭게 회전할 수 있습니다.</p>
+    </div>
+  </main>
+
+  <section id="artworks" class="section">
+    <h2>다른 작품</h2>
+    <p>앞으로 부처의 손, 코뿔소 머리, 사슴 조형물을 이곳에 추가할 수 있습니다.</p>
+  </section>
+
+  <section id="artist" class="section">
+    <h2>작가소개</h2>
+    <p>세웅은 전통, 자연, 생명 에너지, 지역 문화의 상징을 조각 언어로 풀어내는 작가입니다.</p>
+  </section>
+
+  <footer>© 2026 SEWOONG. All rights reserved.</footer>
+  <script src="main.js"></script>
+</body>
+</html>
