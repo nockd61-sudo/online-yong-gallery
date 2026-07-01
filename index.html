@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEWOONG Online Sculpture Gallery</title>
+  <meta name="description" content="세웅 작가의 온라인 조각 전시장. 한 작품씩 고급 전시 공간에서 감상하는 가상 갤러리입니다." />
+  <meta property="og:title" content="SEWOONG Online Sculpture Gallery" />
+  <meta property="og:description" content="오늘의 조각 작품을 온라인 전시장 분위기로 감상하세요." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#home">SEWOONG</a>
+    <nav class="nav">
+      <a href="#artwork">작품보기</a>
+      <a href="#other">다른 작품</a>
+      <a href="#profile">프로필</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" id="artwork">
+      <div class="museum-stage">
+        <div class="ceiling-light"></div>
+        <div class="back-wall"></div>
+        <div class="side-wall left"></div>
+        <div class="side-wall right"></div>
+        <div class="floor"></div>
+
+        <div class="wall-label">
+          <strong>ENERGY APPLE</strong>
+          <span>AI Sculpture Study · 2026</span>
+        </div>
+
+        <div class="art-frame">
+          <img src="artwork-main.jpg" alt="오늘의 조각 작품" onerror="this.style.display='none'; document.querySelector('.placeholder').style.display='flex';" />
+          <div class="placeholder">
+            <div>
+              <strong>작품 이미지 자리</strong>
+              <span>artwork-main.jpg 파일을 넣으세요</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pedestal">
+          <div class="plate">ENERGY APPLE · 2026</div>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <p class="eyebrow">ONLINE SCULPTURE EXHIBITION</p>
+        <h1>오늘의 작품</h1>
+        <h2>Energy Apple</h2>
+        <p class="desc">
+          생명력과 에너지의 흐름을 사과의 표면과 입체적 돌기 형상으로 표현한 조각 구상입니다.
+          온라인 전시 공간에서 작품을 먼저 감상하고, 이후 실제 조각 제작으로 확장할 수 있습니다.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#other">다른 작품 보기</a>
+          <a class="btn" href="#profile">내 프로필</a>
+          <button class="btn" id="shareBtn">공유하기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="other">
+      <div class="section-title">
+        <p class="eyebrow">NEXT COLLECTION</p>
+        <h2>다른 작품 보기</h2>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="thumb bronze"></div><h3>부처의 손</h3><p>새싹을 들고 있는 부드러운 손의 조형.</p></article>
+        <article class="card"><div class="thumb stone"></div><h3>코뿔소 머리</h3><p>브론즈 질감과 작은 뿔들이 있는 강인한 형상.</p></article>
+        <article class="card"><div class="thumb forest"></div><h3>사슴 조형물</h3><p>몸체에 원형 구멍과 문양이 들어간 자연 조각.</p></article>
+      </div>
+    </section>
+
+    <section class="section profile" id="profile">
+      <div>
+        <p class="eyebrow">ARTIST PROFILE</p>
+        <h2>세웅 SEWOONG</h2>
+        <p>
+          전통, 자연, 생명 에너지, 지역 문화의 상징을 조각 언어로 풀어내는 작가입니다.
+          손스케치, AI 이미지, 3D 모델, 실제 조형물 제작 과정을 하나의 전시 콘텐츠로 연결합니다.
+        </p>
+      </div>
+      <div class="profile-box">
+        <strong>작품 문의</strong>
+        <span>Instagram · Blog · Email 연결 가능</span>
+        <a class="btn primary" href="mailto:nockd61@gmail.com">이메일 보내기</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© 2026 SEWOONG Online Sculpture Gallery</p></footer>
+  <script src="main.js"></script>
+</body>
+</html>
