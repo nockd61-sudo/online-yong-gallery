@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+  color: #f4efe7;
+  background:
+    radial-gradient(circle at top left, rgba(190, 130, 70, 0.18), transparent 34%),
+    linear-gradient(135deg, #15110d, #241913 55%, #110d0a);
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 72px;
+  padding: 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  letter-spacing: 0.08em;
+}
+
+.brand strong {
+  font-size: 21px;
+}
+
+.brand span {
+  font-size: 11px;
+  color: #cbb9a3;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  color: #d6c7b6;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a.active {
+  color: #fff;
+}
+
+.museum {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 54px 28px 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.75fr);
+  gap: 38px;
+  align-items: center;
+}
+
+.viewer {
+  position: relative;
+  min-height: 520px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)),
+    radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+}
+
+.viewer img {
+  width: min(88%, 760px);
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 28px 38px rgba(0,0,0,0.45));
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.viewer img.fade {
+  opacity: 0.2;
+  transform: scale(0.985);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 64px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(0,0,0,0.28);
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.arrow.left {
+  left: 18px;
+}
+
+.arrow.right {
+  right: 18px;
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.thumb {
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: #e8dacb;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.thumb.active {
+  background: #c98f5a;
+  color: #160f0b;
+  border-color: #c98f5a;
+  font-weight: 700;
+}
+
+.info {
+  padding: 30px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #d6a06d;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 0.95;
+}
+
+.meta {
+  color: #cdbba7;
+  margin: 18px 0 26px;
+}
+
+.desc {
+  color: #eadfce;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+
+.spec {
+  margin: 26px 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.spec p {
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.spec b {
+  color: #d6a06d;
+}
+
+.main-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  padding: 16px;
+  background: #d59a63;
+  color: #150f0b;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.artist {
+  max-width: 920px;
+  margin: 20px auto 60px;
+  padding: 0 28px;
+}
+
+.artist h2 {
+  font-size: 30px;
+}
+
+.artist p {
+  line-height: 1.9;
+  color: #d8c7b4;
+  word-break: keep-all;
+}
+
+footer {
+  padding: 28px;
+  text-align: center;
+  color: #b9a793;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+footer strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    height: auto;
+    padding: 18px 18px;
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .museum {
+    grid-template-columns: 1fr;
+    padding: 24px 14px 28px;
+    gap: 22px;
+  }
+
+  .viewer {
+    min-height: 390px;
+    border-radius: 22px;
+  }
+
+  .viewer img {
+    width: 92%;
+    max-height: 390px;
+  }
+
+  .arrow {
+    width: 38px;
+    height: 54px;
+    font-size: 34px;
+  }
+
+  .arrow.left {
+    left: 8px;
+  }
+
+  .arrow.right {
+    right: 8px;
+  }
+
+  .info {
+    padding: 22px;
+  }
+
+  .spec p {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
