@@ -2,36 +2,40 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
-  color: #f5ead8;
+  color: #f6ead6;
   background: #050505;
   overflow-x: hidden;
 }
 
-/* 상단 메뉴 */
+/* 상단 */
 .topbar {
   height: 82px;
-  padding: 0 36px;
+  padding: 0 42px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: #070707;
-  border-bottom: 1px solid rgba(214, 160, 90, 0.22);
+  align-items: center;
+  background: #050505;
+  border-bottom: 1px solid rgba(220, 170, 90, 0.25);
 }
 
 .brand strong {
   display: block;
+  color: #e7b86a;
   font-size: 25px;
   letter-spacing: 0.28em;
-  color: #f3d09a;
 }
 
 .brand span {
   font-size: 11px;
-  color: #c99b5b;
-  letter-spacing: 0.16em;
+  color: #bfa17a;
+  letter-spacing: 0.15em;
 }
 
 nav {
@@ -40,48 +44,45 @@ nav {
 }
 
 nav a {
-  color: #e7d7be;
+  color: #dac8ad;
   text-decoration: none;
   font-size: 15px;
 }
 
 nav a.active {
-  color: #dca65c;
-  border-bottom: 2px solid #dca65c;
-  padding-bottom: 8px;
+  color: #e7b86a;
 }
 
-/* 전체 전시장 */
+/* 전체 미술관 */
 .museum {
   min-height: calc(100vh - 82px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 330px;
-  background: #080808;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  background: #060606;
 }
 
-/* 실제 전시장 공간 */
+/* 전시장 */
 .stage {
   position: relative;
-  min-height: 820px;
+  min-height: 840px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 5%, rgba(255, 215, 150, 0.24), transparent 20%),
-    linear-gradient(90deg, rgba(0,0,0,0.45), transparent 18%, transparent 82%, rgba(0,0,0,0.48)),
-    linear-gradient(#2d2a25 0%, #38342d 54%, #1a1713 55%, #070707 100%);
+    radial-gradient(circle at 50% 2%, rgba(255, 220, 150, 0.28), transparent 18%),
+    linear-gradient(90deg, rgba(0,0,0,0.55), transparent 18%, transparent 82%, rgba(0,0,0,0.55)),
+    linear-gradient(#34302a 0%, #3b352d 50%, #171411 51%, #070707 100%);
 }
 
-/* 콘크리트 벽 패널 */
+/* 벽 질감 */
 .stage::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
     linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-    radial-gradient(circle at 20% 35%, rgba(255,255,255,0.08), transparent 18%),
-    radial-gradient(circle at 75% 30%, rgba(255,255,255,0.06), transparent 20%);
-  background-size: 180px 100%, 100% 150px, 100% 100%, 100% 100%;
-  opacity: 0.45;
+    radial-gradient(circle at 18% 32%, rgba(255,255,255,0.09), transparent 20%),
+    radial-gradient(circle at 80% 28%, rgba(255,255,255,0.07), transparent 22%);
+  background-size: 190px 100%, 100% 100%, 100% 100%;
+  opacity: 0.55;
   pointer-events: none;
 }
 
@@ -89,90 +90,98 @@ nav a.active {
 .stage::after {
   content: "";
   position: absolute;
-  left: 18%;
-  right: 18%;
   top: 0;
-  height: 110px;
+  left: 14%;
+  right: 14%;
+  height: 118px;
   background:
     repeating-linear-gradient(
       90deg,
-      #0b0b0b 0 18px,
-      #1a1713 18px 28px
+      #090909 0 22px,
+      #1a1712 22px 34px
     );
-  box-shadow:
-    0 18px 35px rgba(0,0,0,0.65),
-    inset 0 -1px 0 rgba(255,255,255,0.08);
-  z-index: 1;
+  box-shadow: 0 24px 45px rgba(0,0,0,0.75);
+  z-index: 2;
 }
 
-/* 스포트라이트 */
+/* 조명 */
 .spotlight {
   position: absolute;
-  top: 40px;
+  top: 34px;
   left: 50%;
-  width: 560px;
-  height: 720px;
+  width: 620px;
+  height: 780px;
   transform: translateX(-50%);
   background:
-    radial-gradient(ellipse at top, rgba(255, 224, 160, 0.55), rgba(255, 224, 160, 0.18) 32%, transparent 72%);
+    radial-gradient(ellipse at top, rgba(255, 230, 165, 0.6), rgba(255, 210, 135, 0.2) 32%, transparent 74%);
   filter: blur(2px);
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
-/* 조명등 */
-.stage .spotlight::before,
-.stage .spotlight::after {
+.spotlight::before,
+.spotlight::after {
   content: "";
   position: absolute;
-  top: -12px;
-  width: 42px;
-  height: 42px;
+  top: -11px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #111;
+  background: #080808;
   box-shadow:
-    0 0 0 8px #050505,
-    0 18px 30px rgba(255, 205, 130, 0.5);
+    0 0 0 8px #020202,
+    0 20px 36px rgba(255, 210, 125, 0.55);
 }
 
-.stage .spotlight::before {
-  left: 210px;
+.spotlight::before {
+  left: 228px;
 }
 
-.stage .spotlight::after {
-  right: 210px;
+.spotlight::after {
+  right: 228px;
 }
 
-/* 바닥 */
-.stage .art-area::before {
-  content: "";
-  position: absolute;
-  left: -45vw;
-  right: -45vw;
-  bottom: -315px;
-  height: 350px;
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.11), rgba(0,0,0,0.35)),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.13) 0 1px, transparent 1px 150px),
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.11) 0 1px, transparent 1px 115px);
-  transform: perspective(760px) rotateX(62deg);
-  transform-origin: top;
-  opacity: 0.75;
-  z-index: -2;
-}
-
-/* 작품 영역 */
+/* 작품 위치 */
 .art-area {
   position: absolute;
+  top: 142px;
   left: 50%;
-  top: 150px;
-  width: min(760px, 70vw);
-  height: 470px;
+  width: min(820px, 72vw);
+  height: 500px;
   transform: translateX(-50%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  z-index: 4;
+  z-index: 6;
+}
+
+/* 바닥 원근감 */
+.art-area::before {
+  content: "";
+  position: absolute;
+  left: -65vw;
+  right: -65vw;
+  bottom: -355px;
+  height: 430px;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.13), rgba(0,0,0,0.52)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.13) 0 1px, transparent 1px 165px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.1) 0 1px, transparent 1px 120px);
+  transform: perspective(840px) rotateX(63deg);
+  transform-origin: top;
+  z-index: -3;
+  opacity: 0.78;
+}
+
+/* 작품 그림자 */
+.art-area::after {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+  width: 70%;
+  height: 54px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.82), transparent 72%);
+  z-index: -1;
 }
 
 /* 작품 이미지 */
@@ -181,13 +190,13 @@ nav a.active {
   max-height: 100%;
   object-fit: contain;
   filter:
-    drop-shadow(0 42px 46px rgba(0,0,0,0.75))
-    drop-shadow(0 0 22px rgba(218, 150, 70, 0.2));
+    drop-shadow(0 44px 48px rgba(0,0,0,0.8))
+    drop-shadow(0 0 30px rgba(229, 157, 78, 0.28));
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
 .art-area img.fade {
-  opacity: 0.15;
+  opacity: 0.18;
   transform: scale(0.985);
 }
 
@@ -195,53 +204,51 @@ nav a.active {
 .pedestal {
   position: absolute;
   left: 50%;
-  bottom: 118px;
+  bottom: 116px;
+  width: min(590px, 62vw);
   transform: translateX(-50%);
-  width: min(560px, 62vw);
-  z-index: 3;
+  z-index: 5;
 }
 
 .pedestal-top {
-  height: 46px;
+  height: 48px;
   background:
-    linear-gradient(180deg, #222, #111),
-    linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.15), transparent 65%);
-  border: 1px solid rgba(255,255,255,0.1);
+    linear-gradient(180deg, #262626, #111),
+    linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.16), transparent 62%);
+  border: 1px solid rgba(255,255,255,0.12);
   clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
 }
 
 .pedestal-body {
-  height: 150px;
+  height: 162px;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.08), transparent 30%),
-    linear-gradient(180deg, #181818, #080808);
-  border: 1px solid rgba(255,255,255,0.12);
+    linear-gradient(135deg, rgba(255,255,255,0.1), transparent 26%),
+    linear-gradient(180deg, #191919, #060606);
+  border: 1px solid rgba(255,255,255,0.13);
   box-shadow:
-    0 45px 60px rgba(0,0,0,0.65),
+    0 48px 70px rgba(0,0,0,0.72),
     inset 0 1px 0 rgba(255,255,255,0.12);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* 금속 명판 */
+/* 명판 */
 .nameplate {
-  min-width: 280px;
-  padding: 16px 24px;
+  min-width: 290px;
+  padding: 16px 26px;
   text-align: center;
   color: #1b1008;
-  background:
-    linear-gradient(180deg, #e8bd68, #ad7830);
-  border: 1px solid rgba(255,235,180,0.75);
+  background: linear-gradient(180deg, #f0c66d, #a7712d);
+  border: 1px solid rgba(255,235,180,0.78);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.55),
-    0 8px 20px rgba(0,0,0,0.45);
+    0 10px 24px rgba(0,0,0,0.5);
 }
 
 .nameplate strong {
   display: block;
   font-size: 23px;
-  letter-spacing: 0.03em;
 }
 
 .nameplate span {
@@ -253,24 +260,23 @@ nav a.active {
   position: absolute;
   top: 47%;
   transform: translateY(-50%);
-  z-index: 7;
+  z-index: 12;
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  border: 0;
+  border: 1px solid rgba(255,215,150,0.28);
   background: rgba(0,0,0,0.72);
-  color: #fff3df;
+  color: #fff1dc;
   font-size: 44px;
   cursor: pointer;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.5);
 }
 
 .nav-arrow.left {
-  left: 34px;
+  left: 36px;
 }
 
 .nav-arrow.right {
-  right: 34px;
+  right: 36px;
 }
 
 /* 방향 버튼 */
@@ -279,14 +285,13 @@ nav a.active {
   left: 50%;
   bottom: 32px;
   transform: translateX(-50%);
-  z-index: 8;
+  z-index: 12;
   display: flex;
-  gap: 11px;
+  gap: 10px;
   padding: 10px;
   border-radius: 18px;
-  background: rgba(5,5,5,0.68);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
+  background: rgba(4,4,4,0.72);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .view-tabs button {
@@ -300,35 +305,35 @@ nav a.active {
 }
 
 .view-tabs button.active {
-  background: #d9a052;
+  background: #e0a457;
   color: #140c07;
   font-weight: 800;
 }
 
-/* 오른쪽 패널 */
+/* 오른쪽 정보 패널 */
 .info-panel {
-  background: linear-gradient(180deg, #0d0f0f, #050505);
+  background: linear-gradient(180deg, #0b0d0d, #050505);
   border-left: 1px solid rgba(255,255,255,0.08);
-  padding: 38px 30px;
+  padding: 38px 28px;
   overflow-y: auto;
 }
 
 .eyebrow {
-  color: #d9a052;
+  color: #e0a457;
   letter-spacing: 0.16em;
   font-size: 12px;
 }
 
 h1 {
   margin: 12px 0 16px;
-  font-size: 42px;
+  font-size: 40px;
   line-height: 1.05;
   font-family: Georgia, "Times New Roman", serif;
 }
 
 .meta {
-  color: #d9a052;
-  font-size: 18px;
+  color: #e0a457;
+  font-size: 17px;
 }
 
 .desc {
@@ -340,7 +345,7 @@ h1 {
 
 .actions {
   display: grid;
-  gap: 14px;
+  gap: 13px;
   margin: 34px 0;
 }
 
@@ -348,7 +353,7 @@ h1 {
   height: 48px;
   border-radius: 999px;
   border: 0;
-  background: #d9a052;
+  background: #e0a457;
   color: #120b06;
   font-weight: 800;
   cursor: pointer;
@@ -373,7 +378,6 @@ h1 {
 
 .work-item {
   width: 100%;
-  display: block;
   text-align: left;
   padding: 13px 14px;
   margin-bottom: 10px;
@@ -385,8 +389,8 @@ h1 {
 }
 
 .work-item.active {
-  border-color: #d9a052;
-  background: linear-gradient(90deg, rgba(217,160,82,0.28), rgba(217,160,82,0.08));
+  border-color: #e0a457;
+  background: linear-gradient(90deg, rgba(224,164,87,0.28), rgba(224,164,87,0.08));
 }
 
 .work-item strong {
@@ -401,7 +405,7 @@ h1 {
 
 /* 작가 글 */
 .artist {
-  padding: 48px 8%;
+  padding: 52px 8%;
   background: #090909;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
@@ -420,7 +424,7 @@ h1 {
 }
 
 footer {
-  padding: 28px;
+  padding: 30px;
   text-align: center;
   background: #050505;
   color: #a99578;
@@ -428,7 +432,7 @@ footer {
 
 footer strong {
   display: block;
-  color: #d9a052;
+  color: #e0a457;
   letter-spacing: 0.2em;
 }
 
@@ -504,6 +508,6 @@ footer strong {
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 35px;
   }
 }
