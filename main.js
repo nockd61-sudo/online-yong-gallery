@@ -1,22 +1,22 @@
 const images = [
   {
-    src: "images/energy-apple-front.jpg",
+    src: "images/apple/front.jpg",
     alt: "Energy Apple 정면"
   },
   {
-    src: "images/energy-apple-left.jpg",
+    src: "images/apple/left.jpg",
     alt: "Energy Apple 좌측면"
   },
   {
-    src: "images/energy-apple-right.jpg",
+    src: "images/apple/right.jpg",
     alt: "Energy Apple 우측면"
   },
   {
-    src: "images/energy-apple-back.jpg",
+    src: "images/apple/back.jpg",
     alt: "Energy Apple 후면"
   },
   {
-    src: "images/energy-apple-detail.jpg",
+    src: "images/apple/detail.jpg",
     alt: "Energy Apple 상세"
   }
 ];
