@@ -38,13 +38,24 @@ function showImage(index) {
   setTimeout(() => {
     artImage.src = images[current].src;
     artImage.alt = images[current].alt;
-    thumbs.forEach((btn, i) => btn.classList.toggle("active", i === current));
+
+    thumbs.forEach((btn, i) => {
+      btn.classList.toggle("active", i === current);
+    });
+
     artImage.classList.remove("fade");
   }, 120);
 }
 
-prevBtn.addEventListener("click", () => showImage(current - 1));
-nextBtn.addEventListener("click", () => showImage(current + 1));
+prevBtn.addEventListener("click", () => {
+  stopAuto();
+  showImage(current - 1);
+});
+
+nextBtn.addEventListener("click", () => {
+  stopAuto();
+  showImage(current + 1);
+});
 
 thumbs.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -75,11 +86,17 @@ autoBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") showImage(current - 1);
-  if (event.key === "ArrowRight") showImage(current + 1);
+  if (event.key === "ArrowLeft") {
+    stopAuto();
+    showImage(current - 1);
+  }
+
+  if (event.key === "ArrowRight") {
+    stopAuto();
+    showImage(current + 1);
+  }
 });
 
-// 모바일 손가락 좌우 넘김
 let touchStartX = 0;
 
 artImage.addEventListener("touchstart", (event) => {
@@ -88,8 +105,11 @@ artImage.addEventListener("touchstart", (event) => {
 
 artImage.addEventListener("touchend", (event) => {
   const diff = event.changedTouches[0].screenX - touchStartX;
+
   if (Math.abs(diff) > 45) {
     stopAuto();
     showImage(diff > 0 ? current - 1 : current + 1);
   }
 });
+
+showImage(0);
