@@ -1,1 +1,0 @@
-기존 images 폴더의 museum-cover.jpg, apple-cover.jpg는 그대로 유지해도 됩니다.
