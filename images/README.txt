@@ -1,0 +1,1 @@
+여기에 museum-cover.jpg 와 apple-cover.jpg 대표 이미지를 넣으세요.
