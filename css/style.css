@@ -45,6 +45,7 @@ button { font-family: inherit; }
   font-size: clamp(42px, 7vw, 82px);
   line-height: 1.1;
   margin: 22px 0;
+  white-space: nowrap;
 }
 .hero-text { font-size: 20px; line-height: 1.8; opacity: 0.92; }
 .enter-button {
