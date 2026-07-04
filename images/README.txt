@@ -1,0 +1,1 @@
+museum-cover.jpg와 apple-cover.jpg를 이 폴더에 넣으세요.

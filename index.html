@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SEWOONG 3D Online Museum</title>
+  <meta name="description" content="세웅 작가의 3D 온라인 미술관. 조각 작품을 온라인 전시장 안에서 감상할 수 있습니다." />
+
+  <meta property="og:title" content="SEWOONG 3D Online Museum" />
+  <meta property="og:description" content="세웅 작가의 조각 작품을 3D 온라인 전시장에서 감상해보세요." />
+  <meta property="og:image" content="https://nockd61-sudo.github.io/online-yong-gallery/images/museum-cover.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="museum-hero">
+    <nav class="top-nav">
+      <div class="logo">SEWOONG MUSEUM</div>
+      <div class="nav-links">
+        <a href="#gallery">전시관</a>
+        <a href="#about">작가노트</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <p class="eyebrow">3D DIGITAL SCULPTURE MUSEUM</p>
+      <h1>세웅 3D 온라인 미술관</h1>
+      <p class="hero-text">
+        조각 작품을 사진이 아니라 입체로 감상하는 디지털 전시장입니다.
+      </p>
+      <a href="#gallery" class="enter-button">전시관 입장</a>
+    </div>
+  </header>
+
+  <section class="museum-corridor">
+    <div class="floor">
+      <div class="light-circle"></div>
+      <h2>현재 전시</h2>
+      <p>작품을 클릭하면 3D 감상 페이지로 이동합니다.</p>
+    </div>
+  </section>
+
+  <main id="gallery" class="gallery-room">
+    <section class="room-title">
+      <p>ROOM 01</p>
+      <h2>생명의 형태</h2>
+    </section>
+
+    <div class="art-grid">
+      <article class="art-card featured">
+        <a href="artworks/apple/">
+          <div class="art-image-wrap">
+            <img src="images/apple-cover.jpg" alt="Energy Apple 대표 이미지" />
+            <div class="spotlight"></div>
+          </div>
+          <div class="card-body">
+            <p class="art-number">작품 01</p>
+            <h3>Energy Apple</h3>
+            <p>브론즈 조각 · 2026</p>
+            <span>3D 작품 감상하기 →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="empty-card">
+        <div>
+          <p>작품 02</p>
+          <h3>다음 작품 준비 중</h3>
+          <span>대표 이미지와 GLB를 추가하면 확장됩니다.</span>
+        </div>
+      </article>
+
+      <article class="empty-card">
+        <div>
+          <p>작품 03</p>
+          <h3>다음 작품 준비 중</h3>
+          <span>작품마다 독립 페이지를 만들 수 있습니다.</span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <section id="about" class="artist-note">
+    <p class="eyebrow">ARTIST NOTE</p>
+    <h2>세웅의 조각은 기억과 생명의 형태를 찾는 여정입니다.</h2>
+    <p>
+      이 온라인 미술관은 작품 사진을 넘어, 관람자가 직접 회전하고 확대하며 감상하는
+      디지털 전시 공간으로 발전합니다.
+    </p>
+  </section>
+
+  <footer>
+    © SEWOONG 3D Online Museum
+  </footer>
+</body>
+</html>

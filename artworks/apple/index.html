@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Energy Apple | SEWOONG 3D Online Museum</title>
+  <meta name="description" content="세웅 작가의 Energy Apple을 3D로 감상하는 작품 페이지입니다." />
+
+  <meta property="og:title" content="Energy Apple | 세웅 3D 온라인 미술관" />
+  <meta property="og:description" content="브론즈 조각 Energy Apple을 회전하고 확대하며 3D로 감상해보세요." />
+  <meta property="og:image" content="https://nockd61-sudo.github.io/online-yong-gallery/images/apple-cover.jpg" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <header class="art-detail-header">
+    <a href="../../" class="back-link">← 전시장으로 돌아가기</a>
+    <p class="eyebrow">ROOM 01 · 생명의 형태</p>
+    <h1>Energy Apple</h1>
+    <p>브론즈 조각 · 2026 · 세웅</p>
+  </header>
+
+  <main class="art-detail-layout">
+    <section class="viewer-section">
+      <div class="viewer-toolbar">
+        <button id="load3d">3D 작품 불러오기</button>
+        <button id="fullscreenBtn">전체화면</button>
+        <button id="resetViewBtn">시점 초기화</button>
+      </div>
+
+      <div class="viewer-box">
+        <div id="viewer">
+          <div class="viewer-start">
+            <h2>Energy Apple</h2>
+            <p>버튼을 누르면 3D 작품이 로딩됩니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="viewer-help">
+        마우스 드래그: 회전 / 휠: 확대·축소 / 모바일: 손가락으로 회전·확대
+      </p>
+    </section>
+
+    <aside class="art-info-panel">
+      <p class="art-number">작품 01</p>
+      <h2>Energy Apple</h2>
+      <p class="meta">Bronze Sculpture · 2026</p>
+
+      <h3>작품 설명</h3>
+      <p>
+        Energy Apple은 생명, 에너지, 기억의 형태를 사과라는 상징으로 표현한 조각 작품입니다.
+        표면의 흐름과 덩어리의 긴장감을 통해 살아 움직이는 생명의 감각을 전달합니다.
+      </p>
+
+      <h3>AI 도슨트</h3>
+      <p id="docentText">
+        안녕하세요. 이 작품은 세웅 작가가 생명의 에너지와 기억의 형태를 사과라는 상징 안에 담아낸 조각입니다.
+        둥근 형태는 생명의 순환을, 표면의 움직임은 시간과 감정의 흔적을 보여줍니다.
+      </p>
+
+      <div class="docent-buttons">
+        <button onclick="speakDocent()">도슨트 듣기</button>
+        <button onclick="stopDocent()">정지</button>
+      </div>
+
+      <div class="share-buttons">
+        <button onclick="sharePage()">SNS 공유하기</button>
+        <button onclick="copyLink()">링크 복사</button>
+      </div>
+    </aside>
+  </main>
+
+  <script type="module" src="../../js/viewer.js"></script>
+</body>
+</html>
