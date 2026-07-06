@@ -1,7 +1,0 @@
-const API=window.YONGRYEON_API_BASE;let token=localStorage.getItem('yr_token');const $=s=>document.querySelector(s);
-function showAdmin(){ $('#loginBox').classList.add('hidden'); $('#adminBox').classList.remove('hidden'); loadList(); }
-if(token)showAdmin();
-$('#loginBtn').onclick=async()=>{const r=await fetch(`${API}/api/login`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({user:$('#user').value,pass:$('#pass').value})});const j=await r.json();if(j.token){token=j.token;localStorage.setItem('yr_token',token);showAdmin()}else $('#loginMsg').textContent='로그인 실패'};
-$('#artForm').onsubmit=async e=>{e.preventDefault();$('#saveMsg').textContent='업로드 중...';const fd=new FormData(e.target);const r=await fetch(`${API}/api/admin/artworks`,{method:'POST',headers:{Authorization:`Bearer ${token}`},body:fd});$('#saveMsg').textContent=r.ok?'저장되었습니다.':'저장 실패';if(r.ok){e.target.reset();loadList()}};
-async function loadList(){const r=await fetch(`${API}/api/admin/artworks`,{headers:{Authorization:`Bearer ${token}`}});const data=await r.json();$('#list').innerHTML=data.map(a=>`<div class="item"><div><b>${a.title}</b><br><small>${a.year||''} ${a.is_public?'공개':'비공개'}</small></div><button class="danger" onclick="delArt('${a.id}')">삭제</button></div>`).join('')}
-async function delArt(id){if(!confirm('삭제할까요?'))return;await fetch(`${API}/api/admin/artworks/${id}`,{method:'DELETE',headers:{Authorization:`Bearer ${token}`}});loadList()}
