@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YONGRYEON | Digital Sculpture</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="landing">
+    <section class="hero">
+      <h1>YONGRYEON</h1>
+      <p>Digital Sculpture</p>
+      <button id="enterBtn">ENTER</button>
+    </section>
+
+    <section id="gallery" class="gallery hidden">
+      <header class="topbar">
+        <div class="brand">YONGRYEON</div>
+        <nav><a href="#gallery">Works</a><a href="about.html">About</a></nav>
+      </header>
+      <div id="empty" class="empty hidden">등록된 작품이 없습니다.</div>
+      <div id="works" class="works"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YONGRYEON | 3D View</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="viewer-page">
+  <a class="back" href="index.html#gallery">← Works</a>
+  <model-viewer id="viewer" camera-controls auto-rotate shadow-intensity="0.45" exposure="1" environment-image="neutral" ar></model-viewer>
+  <div class="viewer-info">
+    <h1 id="title"></h1>
+    <p id="meta"></p>
+  </div>
+  <script src="config.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>
