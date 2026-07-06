@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YONGRYEON Admin</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-body">
+  <main class="admin-shell admin-wide">
+    <section id="loginPanel" class="admin-card">
+      <p class="eyebrow">PRIVATE ADMIN</p>
+      <h1>YONGRYEON 관리자</h1>
+      <form id="loginForm" class="admin-form">
+        <label>아이디
+          <input id="adminId" type="text" autocomplete="username" required />
+        </label>
+        <label>비밀번호
+          <input id="adminPw" type="password" autocomplete="current-password" required />
+        </label>
+        <button type="submit">로그인</button>
+      </form>
+      <p id="loginMessage" class="admin-message"></p>
+      <p class="admin-note">임시 로그인: admin / yongryeon2026</p>
+    </section>
+
+    <section id="dashboardPanel" class="admin-card hidden">
+      <div class="admin-topline">
+        <div>
+          <p class="eyebrow small-eyebrow">DASHBOARD</p>
+          <h1>작품 등록</h1>
+        </div>
+        <button id="logoutBtn" class="ghost-btn">로그아웃</button>
+      </div>
+
+      <form id="artworkForm" class="artwork-form">
+        <div class="form-grid">
+          <label>작품명
+            <input id="title" name="title" type="text" placeholder="예: Energy Apple" required />
+          </label>
+          <label>제작연도
+            <input id="year" name="year" type="text" placeholder="예: 2026" />
+          </label>
+          <label>재료
+            <input id="material" name="material" type="text" placeholder="예: Bronze / FRP / Digital Sculpture" />
+          </label>
+          <label>크기
+            <input id="size" name="size" type="text" placeholder="예: 120 × 80 × 60 cm" />
+          </label>
+        </div>
+
+        <label>작품 설명
+          <textarea id="description" name="description" rows="5" placeholder="작품 설명은 선택입니다. 관람 화면에서는 최소한으로 표시됩니다."></textarea>
+        </label>
+
+        <div class="upload-grid">
+          <label class="upload-box">대표 이미지 JPG/PNG
+            <input id="imageFile" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp" required />
+            <span id="imageName">선택된 이미지 없음</span>
+          </label>
+          <label class="upload-box">3D GLB 파일
+            <input id="modelFile" name="modelFile" type="file" accept=".glb,model/gltf-binary" required />
+            <span id="modelName">선택된 GLB 없음</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="primary-btn">작품 저장 테스트</button>
+          <button type="button" id="clearFormBtn" class="ghost-btn">입력 지우기</button>
+        </div>
+      </form>
+
+      <div id="saveMessage" class="next-box muted-box">
+        <strong>Step 3 상태</strong>
+        <p>작품 등록 폼이 연결되었습니다. 이번 단계는 파일을 실제 업로드하지 않고 입력값 검증과 등록 준비만 합니다.</p>
+        <p>다음 Step 4에서 Cloudflare R2 업로드를 연결합니다.</p>
+      </div>
+
+      <a class="back-link" href="index.html">전시장 보기</a>
+    </section>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>
