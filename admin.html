@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>관리자 | 세웅 3D 온라인 미술관</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <strong>SEWOONG ADMIN</strong>
+    <span>작품 추가 · 수정 · 삭제</span>
+  </div>
+  <nav>
+    <a href="index.html">전시관</a>
+    <a href="admin.html">관리자</a>
+  </nav>
+</header>
+
+<main class="admin-wrap">
+  <section id="loginBox" class="panel">
+    <h1>관리자 로그인</h1>
+    <p class="muted">초기 비밀번호: <b>1234</b></p>
+    <input id="password" type="password" placeholder="비밀번호 입력" />
+    <button onclick="login()">로그인</button>
+  </section>
+
+  <section id="adminBox" class="panel hidden">
+    <h1>작품 등록</h1>
+    <div class="grid-form">
+      <input id="title" placeholder="작품 제목 예: Energy Apple" />
+      <input id="number" placeholder="작품 번호 예: 작품 01" />
+      <input id="room" placeholder="전시실 예: ROOM 01 · 생명의 형태" />
+      <input id="year" placeholder="제작연도 예: 2026" />
+      <input id="material" placeholder="재료 예: 브론즈 조각" />
+      <input id="artist" placeholder="작가 예: 김용연" />
+      <textarea id="description" placeholder="작품 설명"></textarea>
+      <label>대표 이미지 선택
+        <input id="coverFile" type="file" accept="image/*" />
+      </label>
+      <label>3D GLB 파일 선택
+        <input id="modelFile" type="file" accept=".glb,.gltf" />
+      </label>
+    </div>
+    <button onclick="saveArtwork()">작품 등록</button>
+    <button class="ghost" onclick="exportData()">작품 데이터 백업</button>
+    <p class="notice">이 v2.0 기본형은 브라우저 저장 방식입니다. 같은 PC/브라우저에서는 유지됩니다.</p>
+  </section>
+
+  <section id="listBox" class="panel hidden">
+    <h2>등록된 작품</h2>
+    <div id="adminList"></div>
+  </section>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
