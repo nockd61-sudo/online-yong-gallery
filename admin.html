@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YONGRYEON Admin</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-body">
+  <main class="admin-wrap">
+    <section id="loginPanel" class="admin-card">
+      <h1>YONGRYEON ADMIN</h1>
+      <p class="muted">관리자 로그인</p>
+      <label>아이디<input id="adminUser" autocomplete="username" /></label>
+      <label>비밀번호<input id="adminPass" type="password" autocomplete="current-password" /></label>
+      <button id="loginBtn" class="primary">LOGIN</button>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section id="dashboardPanel" class="admin-card wide hidden">
+      <div class="admin-top">
+        <div>
+          <h1>작품 등록</h1>
+          <p class="muted">대표 이미지와 GLB를 Cloudflare R2에 저장하고 작품 정보는 D1에 저장합니다.</p>
+        </div>
+        <button id="logoutBtn" class="ghost">로그아웃</button>
+      </div>
+
+      <form id="artworkForm" class="art-form">
+        <div class="grid2">
+          <label>작품명<input name="title" required placeholder="예: Energy Apple" /></label>
+          <label>작품번호<input name="number" placeholder="예: 01" /></label>
+          <label>제작연도<input name="year" placeholder="예: 2026" /></label>
+          <label>재료<input name="material" placeholder="예: Bronze / FRP" /></label>
+          <label>크기<input name="size" placeholder="예: 120 x 80 x 60 cm" /></label>
+          <label>전시순서<input name="display_order" type="number" value="0" /></label>
+        </div>
+        <label>작품 설명<textarea name="description" rows="5" placeholder="간단한 작품 설명"></textarea></label>
+        <label>대표 이미지<input name="image" type="file" accept="image/*" required /></label>
+        <label>3D GLB 파일<input name="model" type="file" accept=".glb,model/gltf-binary" required /></label>
+        <label class="check"><input name="is_public" type="checkbox" checked /> 공개</label>
+        <button class="primary" type="submit">작품 등록</button>
+        <p id="saveMsg" class="msg"></p>
+      </form>
+
+      <hr />
+      <h2>등록 작품</h2>
+      <div id="adminList" class="admin-list">불러오는 중...</div>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

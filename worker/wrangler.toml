@@ -1,0 +1,12 @@
+name = "yongryeon-api"
+main = "src/index.js"
+compatibility_date = "2026-07-06"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "yongryeon-gallery"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "yongryeon-db"
+database_id = "YOUR_D1_DATABASE_ID"
