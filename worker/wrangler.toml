@@ -1,0 +1,18 @@
+name = "yongryeon-gallery-api"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "yongryeon-db"
+database_id = "PUT_D1_DATABASE_ID_HERE"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "yongryeon-assets"
+
+[vars]
+ADMIN_USER = "admin"
+ADMIN_PASS = "CHANGE_THIS_PASSWORD"
+JWT_SECRET = "CHANGE_THIS_LONG_RANDOM_SECRET"
+PUBLIC_R2_BASE_URL = "https://YOUR-R2-PUBLIC-URL"
