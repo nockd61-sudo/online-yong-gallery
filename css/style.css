@@ -133,8 +133,9 @@ nav a {
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 34px
+    grid-template-columns: repeat(auto-fit, 320px);
+    justify-content: center;
+    gap: 40px;
 }
 
 .work-card {
