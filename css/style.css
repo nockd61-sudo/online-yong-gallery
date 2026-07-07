@@ -358,27 +358,5 @@ model-viewer {
   overflow: hidden;
   background: #050505;
 }
-.work-card,
-.art-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
 
-.work-card:hover,
-.art-card:hover {
-  transform: translateY(-10px);
-  border-color: #c9b27c;
-}
 
-.viewer-body {
-  margin: 0;
-  overflow: hidden;
-  background: #050505;
-}
-
-model-viewer {
-  width: 100vw;
-  height: 100vh;
-  background: #050505;
-}
