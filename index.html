@@ -1,156 +1,122 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEWOONG Sculpture Museum</title>
 
-body {
-  background: #111;
-  color: #f5f5f5;
-  font-family: Arial, sans-serif;
-}
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-.hero {
-  height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-    url("images/gallery-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<body>
 
-.hero-content h1 {
-  font-size: 72px;
-  letter-spacing: 12px;
-  font-weight: 300;
-}
+<header class="site-header">
 
-.hero-content p {
-  margin-top: 20px;
-  font-size: 22px;
-  color: #c9b27c;
-}
+    <a href="#" class="brand">
+        SEWOONG
+    </a>
 
-.hero-content button {
-  margin-top: 45px;
-  padding: 16px 42px;
-  border: 1px solid #c9b27c;
-  background: transparent;
-  color: #c9b27c;
-  font-size: 15px;
-  letter-spacing: 3px;
-  cursor: pointer;
-}
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#works">WORKS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
 
-.hero-content button:hover {
-  background: #c9b27c;
-  color: #111;
-}
+</header>
 
-.gallery-section {
-  min-height: 100vh;
-  padding: 40px 7%;
-  background: linear-gradient(180deg, #111, #1b1b1b);
-}
 
-.top-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 90px;
-}
+<section class="hero">
 
-.logo {
-  letter-spacing: 5px;
-  color: #c9b27c;
-}
+    <div class="small-title">
+        CONTEMPORARY SCULPTOR
+    </div>
 
-nav a {
-  color: #aaa;
-  text-decoration: none;
-  margin-left: 28px;
-  font-size: 14px;
-}
+    <h1>SEWOONG</h1>
 
-nav a:hover {
-  color: #c9b27c;
-}
+    <a href="#works" class="enter">
+        ENTER GALLERY
+    </a>
 
-.gallery-section h2 {
-  text-align: center;
-  font-size: 42px;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
+</section>
 
-.intro {
-  text-align: center;
-  color: #aaa;
-  margin-bottom: 60px;
-}
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 45px;
-}
 
-.art-card {
-  background: #202020;
-  padding: 25px;
-  text-align: center;
-  border: 1px solid #333;
-  transition: 0.3s;
+<section id="works" class="section">
 
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
+    <h2>Works</h2>
 
-.art-card:hover {
-  transform: translateY(-10px);
-  border-color: #c9b27c;
-}
+    <div class="works-grid">
 
-.art-card img {
-  width: 100%;
-  height: 320px;
-  object-fit: contain;
-  background: #151515;
-}
 
-.art-card h3 {
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: 300;
-}
+        <div class="work-card">
 
-.art-card p {
-  margin-top: 8px;
-  color: #999;
-}
+            <a class="thumb"
+               href="viewer.html?model=models/apple.glb">
 
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 44px;
-    letter-spacing: 6px;
-  }
+                <img src="images/apple.jpg"
+                     alt="Apple Sculpture">
 
-  .top-menu {
-    flex-direction: column;
-    gap: 25px;
-  }
+            </a>
 
-  nav a {
-    margin: 0 8px;
-  }
+            <div class="work-meta">
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}
+                <h3>Apple</h3>
+
+                <p>
+                    Bronze Sculpture · 2026
+                </p>
+
+                <a class="view3d"
+                   href="viewer.html?model=models/apple.glb">
+
+                    VIEW 3D
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+
+<section id="about"
+         class="section about-section">
+
+<h2>About</h2>
+
+<p>
+
+세웅은 자연과 인간, 기억을 주제로
+조각 작품을 제작하는 대한민국 조각가입니다.
+
+</p>
+
+</section>
+
+
+
+<section id="contact"
+         class="section contact-section">
+
+<h2>Contact</h2>
+
+<p>
+
+Email<br>
+
+nockd61@gmail.com
+
+</p>
+
+</section>
+
+
+</body>
+</html>
