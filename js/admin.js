@@ -1,3 +1,4 @@
+alert("admin.js 최신파일 실행됨");
 const API_URL = "https://yongryeon-api.nockd61.workers.dev/api/artworks";
 
 const ADMIN_ID = "admin";
