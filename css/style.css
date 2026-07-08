@@ -396,7 +396,7 @@ model-viewer {
     color: var(--muted);
     font-size: 15px;
     letter-spacing: .18em;
-    margin: -13vh 0 42px;
+    margin: 0 0 42px;
 }
 
 .enter {
