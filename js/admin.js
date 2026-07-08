@@ -49,7 +49,7 @@ async function loadAdminArtworks() {
           <span>${art.description || ""}</span>
         </div>
         <button class="ghost" disabled>수정</button>
-        <button class="ghost" disabled>삭제</button>
+      <button class="ghost" onclick="deleteArtwork('${art.id}')">삭제</button>
       `;
 
       adminList.appendChild(item);
@@ -58,5 +58,26 @@ async function loadAdminArtworks() {
   } catch (err) {
     console.error(err);
     adminList.innerHTML = "작품 목록을 불러오지 못했습니다.";
+  }
+}
+async function deleteArtwork(id) {
+  if (!confirm("정말 이 작품을 삭제하시겠습니까?")) return;
+
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE"
+    });
+
+    if (!res.ok) {
+      alert("삭제 실패: Worker에 삭제 기능이 아직 없을 수 있습니다.");
+      return;
+    }
+
+    alert("삭제되었습니다.");
+    loadAdminArtworks();
+
+  } catch (err) {
+    console.error(err);
+    alert("삭제 중 오류가 발생했습니다.");
   }
 }
