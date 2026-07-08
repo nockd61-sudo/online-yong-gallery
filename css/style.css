@@ -467,19 +467,7 @@ model-viewer {
     margin-bottom: 28px;
     text-transform: uppercase;
 }
-.viewer-loading {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--gold);
-  font-size: 16px;
-  letter-spacing: .18em;
-  z-index: 5;
-  background: rgba(0,0,0,.55);
-  border: 1px solid var(--line);
-  padding: 18px 26px;
-}
+
 .viewer-loading {
   position: fixed;
   inset: 0;
@@ -512,4 +500,36 @@ model-viewer {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+@media(max-width:700px) {
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 18px;
+  }
+
+  .museum-title,
+  .hero h1,
+  .hero-subtitle {
+    max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+  .museum-title {
+    font-size: 16px;
+    letter-spacing: .16em;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    letter-spacing: .08em;
+  }
+
+  .viewer-loading {
+    padding: 0 22px;
+    text-align: center;
+    word-break: keep-all;
+  }
 }
