@@ -359,5 +359,56 @@ model-viewer {
   overflow: hidden;
   background: #050505;
 }
+.museum-lobby {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9)),
+        radial-gradient(circle at center, rgba(198,161,91,.18), transparent 35%),
+        linear-gradient(120deg, #050505, #161616 45%, #050505);
+}
+
+.museum-lobby::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, transparent 0%, rgba(255,255,255,.04) 50%, transparent 100%);
+    transform: skewX(-12deg);
+    opacity: .35;
+}
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 55%, rgba(198,161,91,.18), transparent 22%),
+        linear-gradient(to bottom, transparent 0%, #050505 95%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 24px;
+}
+
+.hero-subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    letter-spacing: .18em;
+    margin: -13vh 0 42px;
+}
+
+.enter {
+    display: inline-block;
+    transition: .3s;
+}
+
+.enter:hover {
+    background: var(--gold);
+    color: #050505;
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
 
 
