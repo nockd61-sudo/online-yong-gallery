@@ -49,7 +49,7 @@ async function loadAdminArtworks() {
           <span>${art.material || ""} · ${art.year || ""}</span>
           <span>${art.description || ""}</span>
         </div>
-        <button class="ghost" disabled>수정</button>
+       <button class="ghost" onclick='editArtwork(${JSON.stringify(art)})'>수정</button>
       <button class="ghost" onclick="deleteArtwork('${art.id}')">삭제</button>
       `;
 
