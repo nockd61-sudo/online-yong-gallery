@@ -82,3 +82,41 @@ async function deleteArtwork(id) {
     alert("삭제 중 오류가 발생했습니다.");
   }
 }
+async function editArtwork(art) {
+  const title = prompt("작품명", art.title || "");
+  if (title === null) return;
+
+  const year = prompt("제작연도", art.year || "");
+  if (year === null) return;
+
+  const material = prompt("재료", art.material || "");
+  if (material === null) return;
+
+  const description = prompt("작품 설명", art.description || "");
+  if (description === null) return;
+
+  const res = await fetch(`${API_URL}/${art.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      title,
+      number: art.number || "",
+      year,
+      material,
+      size: art.size || "",
+      description,
+      display_order: art.display_order || 0,
+      is_public: art.is_public === 1
+    })
+  });
+
+  if (!res.ok) {
+    alert("수정 실패");
+    return;
+  }
+
+  alert("수정되었습니다.");
+  loadAdminArtworks();
+}
