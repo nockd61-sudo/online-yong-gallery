@@ -3,17 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>YONGRYEON Viewer</title>
+  <title>YONGRYEONG Viewer</title>
   <link rel="stylesheet" href="css/style.css" />
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
+
 <body class="viewer-body">
+
   <a class="viewer-back" href="./#works">← Works</a>
-  <model-viewer id="mv" camera-controls auto-rotate shadow-intensity="0.7" exposure="1" style="width:100vw;height:100vh;background:#050505"></model-viewer>
+
+  <div id="loadingText" class="viewer-loading">
+    3D 작품을 불러오고 있습니다...
+  </div>
+
+  <model-viewer
+    id="mv"
+    camera-controls
+    auto-rotate
+    shadow-intensity="0.7"
+    exposure="1"
+    style="width:100vw;height:100vh;background:#050505">
+  </model-viewer>
+
   <script>
     const p = new URLSearchParams(location.search);
     const src = p.get('model');
-    if (src) document.getElementById('mv').src = src;
+    const mv = document.getElementById('mv');
+    const loadingText = document.getElementById('loadingText');
+
+    if (src) {
+      mv.src = src;
+    }
+
+    mv.addEventListener('load', () => {
+      loadingText.style.display = 'none';
+    });
+
+    mv.addEventListener('error', () => {
+      loadingText.textContent = '3D 작품을 불러오지 못했습니다.';
+    });
   </script>
+
 </body>
 </html>
