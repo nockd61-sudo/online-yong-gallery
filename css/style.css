@@ -410,5 +410,11 @@ model-viewer {
     border-color: var(--gold);
     transform: translateY(-3px);
 }
-
+.museum-title {
+    color: var(--gold);
+    font-size: 22px;
+    letter-spacing: .35em;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+}
 
