@@ -467,4 +467,16 @@ model-viewer {
     margin-bottom: 28px;
     text-transform: uppercase;
 }
-
+.viewer-loading {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: .18em;
+  z-index: 5;
+  background: rgba(0,0,0,.55);
+  border: 1px solid var(--line);
+  padding: 18px 26px;
+}
