@@ -330,14 +330,13 @@ textarea {
         font-size: 13px;
     }
 
-    .section {
-        padding: 82px 18px 50px;
-    }
+   .section {
+    padding: 70px 18px 35px;
+}
 
-    .section h2 {
-        font-size: 58px;
-        margin: 0 0 28px;
-    }
+.section h2 {
+    margin: 0 0 12px;
+}
 
     .works-grid {
         grid-template-columns: 1fr;
