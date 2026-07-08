@@ -13,7 +13,8 @@
   <a class="viewer-back" href="./#works">← Works</a>
 
   <div id="loadingText" class="viewer-loading">
-    3D 작품을 불러오고 있습니다...
+    <div class="loader"></div>
+    <p>3D 작품을 불러오고 있습니다...</p>
   </div>
 
   <model-viewer
@@ -22,25 +23,30 @@
     auto-rotate
     shadow-intensity="0.7"
     exposure="1"
-    style="width:100vw;height:100vh;background:#050505">
+    style="width:100vw;height:100vh;background:#050505;">
   </model-viewer>
 
   <script>
     const p = new URLSearchParams(location.search);
-    const src = p.get('model');
-    const mv = document.getElementById('mv');
-    const loadingText = document.getElementById('loadingText');
+    const src = p.get("model");
+
+    const mv = document.getElementById("mv");
+    const loading = document.getElementById("loadingText");
 
     if (src) {
       mv.src = src;
     }
 
-    mv.addEventListener('load', () => {
-      loadingText.style.display = 'none';
+    mv.addEventListener("load", () => {
+      loading.style.opacity = "0";
+
+      setTimeout(() => {
+        loading.style.display = "none";
+      }, 400);
     });
 
-    mv.addEventListener('error', () => {
-      loadingText.textContent = '3D 작품을 불러오지 못했습니다.';
+    mv.addEventListener("error", () => {
+      loading.innerHTML = "<p>3D 작품을 불러오지 못했습니다.</p>";
     });
   </script>
 
