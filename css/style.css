@@ -71,9 +71,9 @@ nav a {
 }
 
 .hero h1 {
-    font-size: clamp(58px, 12vw, 158px);
-    letter-spacing: .12em;
-    margin: 26vh 0 18vh
+    font-size: clamp(46px, 9vw, 116px);
+    letter-spacing: .14em;
+    margin: 18vh 0 5vh;
 }
 
 .enter,
