@@ -1,7 +1,7 @@
 const API_URL = "https://yongryeon-api.nockd61.workers.dev/api/artworks";
 
 const ADMIN_ID = "admin";
-const ADMIN_PW = "admin";
+const ADMIN_PW = "1234";
 
 const loginBtn = document.getElementById("loginBtn");
 const loginPanel = document.getElementById("loginPanel");
