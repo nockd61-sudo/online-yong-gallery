@@ -307,27 +307,78 @@ textarea {
 
 @media(max-width:700px) {
     .site-header {
-        padding: 0 24px
+        height: 64px;
+        padding: 0 18px;
+        align-items: center;
     }
 
     .brand {
-        letter-spacing: .25em
+        font-size: 13px;
+        letter-spacing: .32em;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 6px 16px;
+        max-width: 210px;
     }
 
     nav a {
-        margin-left: 18px
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    .section {
+        padding: 82px 18px 50px;
+    }
+
+    .section h2 {
+        font-size: 58px;
+        margin: 0 0 28px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .thumb {
+        aspect-ratio: 4 / 4.4;
+    }
+
+    .work-meta {
+        padding: 14px 16px 18px;
+    }
+
+    .work-meta h3 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .work-meta p {
+        margin: 0 0 8px;
+        min-height: 0;
+        font-size: 14px;
+    }
+
+    .view3d {
+        margin-top: 6px;
+        padding: 9px 14px;
+        font-size: 11px;
     }
 
     .grid2 {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .admin-top {
-        display: block
+        display: block;
     }
 
     .hero h1 {
-        letter-spacing: .04em
+        letter-spacing: .04em;
     }
 }
 .work-card {
